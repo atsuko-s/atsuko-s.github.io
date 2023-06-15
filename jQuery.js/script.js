@@ -10,28 +10,19 @@ $(function(){
     ===================================================*/
     // ハンバーガーメニューをクリックした時
     $('.hamburger').on('click', function() {
-    // ハンバーガーメニューの共通処理を呼び出す
-      hamburger();
+       hamburger();
     });
     // メニューのリンクをクリックした時
     $('#navi a').on('click', function() {
-      // ハンバーガーメニューの共通処理を呼び出す
       hamburger();
     });
 })
 
-// ハンバーガーメニューをクリックした時とメニュー内のリンクをクリックした時の
-// 処理が同じなので処理を共通化する
 function hamburger() {
-  // toggleClassを使用することで、hamburgerクラスにactiveクラスが存在する場合は削除、
-  // 存在しない場合を追加する処理を自動で行ってくれる
   $('.hamburger').toggleClass('active');
-
-  if ($('.hamburger').hasClass('active')) {
-    // hamburgerクラスにactiveクラスが存在する場合は、naviにもactiveクラスを追加する
-    $('#navi').addClass('active');
-  } else {
-    // hamburgerクラスにactiveクラスが存在しない場合は、naviからactiveクラスを削除する
+    if ($('.hamburger').hasClass('active')) {
+      $('#navi').addClass('active');
+    } else {
     $('#navi').removeClass('active');
-  }
+    }
 }
