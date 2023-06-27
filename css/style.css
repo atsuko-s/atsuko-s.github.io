@@ -430,6 +430,79 @@ Voice
   position: relative;
 }
 
+#voice .item-left .balloon-text {
+  margin-left: 25px;
+}
+
+/* 左のふきだしの矢印部分を設定 */
+#voice .item-left .balloon-text::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 0;
+  margin-left: -30px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e9f1fb;
+}
+
+#voice .item-right .balloon-text {
+  margin-right: 25px;
+}
+
+/* 右のふきだしの矢印部分を設定 */
+#voice .item-right .balloon-text::before {
+  content: "";
+  position: absolute;
+  top: 60%;
+  right: 0;
+  margin-right: -30px;
+  border: 15px solid transparent;
+  border-left: 15px solid #e9f1fb;
+}
+
+#voice .balloon {
+  animation: balloon 0.5s ease-out 0s 1 forwards;
+}
+/*
+アニメーション処理
+*/
+@keyframes balloon {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*-------------------------------------------
+Summary
+-------------------------------------------*/
+/*
+アニメーションを実行
+*/
+
+#summary {
+  background: url("../img/bg.gif") repeat;
+  animation: fall 10s infinite linear;
+  padding: 60px 0;
+  margin-bottom: 120px;
+}
+
+/*
+アニメーション処理
+*/
+@keyframes fall {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -700px 700px;
+  }
+}
+
 /*-------------------------------------------
 footer
 -------------------------------------------*/
